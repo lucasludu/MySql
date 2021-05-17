@@ -24,7 +24,7 @@ drop table coche;
 
 show tables; # Muestra las tablas
 insert into coche (id    , marca , modelo, precio)
-values			   (303030, 'Ford', 'Ka'  , 24000);
+values	          (303030, 'Ford', 'Ka'  , 24000);
 
 select * from coche; # Muestro la tabla de coche. Lo puedo reutilizar las veces que quiera.
 
@@ -50,7 +50,7 @@ select * from coche;
 # primary key = clave primaria
 # unique key = para no duplicar
 create table coche2 (
-	id int unsigned auto_increment primary key,
+    id int unsigned auto_increment primary key,
     numero int  unique key,
     marca varchar(25) not null,
     modelo varchar(25) not null,
@@ -128,9 +128,9 @@ create table verduras (
     fechaVenc date
 );
 
-insert into verduras (nombre	, precio, fechaInicio	, fechaVenc		)
-values				 ("Tomate"	, 50	, "2021-01-01"	, "2021-03-10"	),
-					 ("Papa"	, 35	, "2021-01-05"	, "2021-04-18"	),
+insert into verduras (nombre	, precio, fechaInicio	, fechaVenc	)
+values		     ("Tomate"	, 50	, "2021-01-01"	, "2021-03-10"	),
+          	     ("Papa"	, 35	, "2021-01-05"	, "2021-04-18"	),
                      ("Cebolla"	, 60	, "2021-01-10"	, "2021-04-25"	);
                      
 select * from verduras;
@@ -230,11 +230,11 @@ create table Empleados (
     sueldo int
 );
 
-insert into Empleados (dni		, nombre	, apellido	, sueldo)
-values				  (303030	, "Juan"	, "Gomez"	, 40000	),
-					  (313131	, "Maria"	, "Perez"	, 41000	),
+insert into Empleados (dni	, nombre	, apellido	, sueldo)
+values		      (303030	, "Juan"	, "Gomez"	, 40000	),
+		      (313131	, "Maria"	, "Perez"	, 41000	),
                       (323232	, "Analia"	, "Gomez"	, 42000	),
-					  (333333	, "Juan"	, "Cordoba"	, 43000	);
+		      (333333	, "Juan"	, "Cordoba"	, 43000	);
                       
 select * from Empleados;
 
@@ -282,16 +282,16 @@ create table Articulos (
     disponible enum('SI', 'NO')
 );
 
-insert into Articulos (nombre				, precio	, marca		, categoria		, presentacion		, stock	, disponible)
-values				  ('Iphone 6'			, 499.9		, 'Apple'	, 'Smartphone'	, '16 GB'			, 500	, 'SI'		),
-					  ('Ipad Pro'			, 599.9		, 'Apple'	, 'Smartphone'	, '128 GB'			, 300	, 'SI'		),
-					  ('Nexus 7'			, 299.9		, 'LG'		, 'Smartphone'	, '32 GB'			, 250	, 'NO'		),
-					  ('Galaxy S7'			, 459.9		, 'Samsung'	, 'Smartphone'	, '64 GB'			, 200	, 'SI'		),
-					  ('Impresora T23'		, 489.9		, 'Epson'	, 'Impresoras'	, 'Color'			, 180	, 'NO'		),
-					  ('Impresora T33'		, 399		, 'Epson'	, 'Impresoras'	, 'Color'			, 200	, 'NO'		),
-					  ('Lavarropa 700'		, 1679		, 'LG'		, 'Lavarropas'	, 'Automatico'		, 100	, 'SI'		),
-					  ('Camara Digital 760'	, 649		, 'Kodak'	, 'Fotografia'	, null				, 150	, 'NO'		),
-					  ('Notebook CQ40-300'	, 2999		, 'HP'		, 'Notebooks'	, 'Intel Core I3'	, 100	, 'SI'		);
+insert into Articulos (nombre			, precio	, marca		, categoria	, presentacion		 , stock	, disponible)
+values		      ('Iphone 6'		, 499.9		, 'Apple'	, 'Smartphone'	, '16 GB'		 , 500	 	, 'SI'	    ),
+		      ('Ipad Pro'		, 599.9		, 'Apple'	, 'Smartphone'	, '128 GB'		 , 300		, 'SI'	    ),
+		      ('Nexus 7'		, 299.9		, 'LG'		, 'Smartphone'	, '32 GB'		 , 250		, 'NO'	    ),
+		      ('Galaxy S7'		, 459.9		, 'Samsung'	, 'Smartphone'	, '64 GB'		 , 200		, 'SI'      ),
+		      ('Impresora T23'		, 489.9		, 'Epson'	, 'Impresoras'	, 'Color'		 , 180		, 'NO'	    ),
+		      ('Impresora T33'		, 399		, 'Epson'	, 'Impresoras'	, 'Color'		 , 200		, 'NO'	    ),
+		      ('Lavarropa 700'		, 1679		, 'LG'		, 'Lavarropas'	, 'Automatico'		 , 100		, 'SI'      ),
+		      ('Camara Digital 760'	, 649		, 'Kodak'	, 'Fotografia'	, null			 , 150		, 'NO'	    ),
+		      ('Notebook CQ40-300'	, 2999		, 'HP'		, 'Notebooks'	, 'Intel Core I3'	 , 100		, 'SI'	    );
 
 select * from Articulos;
 
@@ -355,17 +355,17 @@ select nombre, precio, round((precio*1.15), 2) as NewPrecio from Articulos havin
 
 drop table if exists Mecanicos;
 create table Mecanicos (
-	id 			int auto_increment primary key,
-    dni 		int unsigned unique key not null,
-    nombre 		varchar(15) not null,
+    id 		int auto_increment primary key,
+    dni 	int unsigned unique key not null,
+    nombre 	varchar(15) not null,
     apellido 	varchar(15) not null
 );
 
-insert into Mecanicos 	(dni	, nombre	, apellido		)
-values 					(303030	, "Carlitos", "Figueroa"	),
-						(313131	, "Fernando", "Robles"		),
-                        (323232	, "Daiana"	, "Bilhere"		),
-                        (333333	, "Vicky"	, "Genga"		);
+insert into Mecanicos 	(dni	, nombre	, apellido  )
+values 			(303030	, "Carlitos"	, "Figueroa"),
+			(313131	, "Fernando"	, "Robles"  ),
+                        (323232	, "Daiana"	, "Bilhere" ),
+                        (333333	, "Vicky"	, "Genga"   );
 				
 select * from Mecanicos;
 describe Mecanicos;
@@ -427,11 +427,11 @@ create table Proveedores (
     telefono varchar(15) not null
 );
 
-insert into Proveedores (dni	, nombre	, apellido		, telefono)
-values					(343434	, "Monica"	, "Corzo"		, '606060'),
-						(353535	, "Jose"	, "Vizzuti"		, '616161'),
+insert into Proveedores (dni	, nombre	, apellido	, telefono)
+values			(343434	, "Monica"	, "Corzo"	, '606060'),
+			(353535	, "Jose"	, "Vizzuti"	, '616161'),
                         (363636	, "Mario"	, "Rodriguez"	, '626262'),
-                        (373737	, "Melisa"	, "Genga"		, '636363');
+                        (373737	, "Melisa"	, "Genga"	, '636363');
                         
 select * from proveedores;
 show tables;
@@ -444,7 +444,7 @@ select database();
 
 drop table if exists Ayudantes;
 create table Ayudantes (
-	id int auto_increment primary key, 
+    id int auto_increment primary key, 
     dni int unsigned not null unique key,
     nombre varchar(30) not null,
     apellido varchar(15) not null,
@@ -452,10 +452,10 @@ create table Ayudantes (
 );
 
 insert into Ayudantes 	(dni	, nombre	, apellido	, telefono)
-values					(383838	, "Federico", "Cazas"	, '707070'),
-						(393939	, "Marta"	, "Palencia", '717171'),
+values			(383838	, "Federico"	, "Cazas"	, '707070'),
+			(393939	, "Marta"	, "Palencia"	, '717171'),
                         (404040	, "Rosana"	, "Galmes"	, '727272'),
-                        (414141	, "Carolina", "Martinez", '737373');
+                        (414141	, "Carolina"	, "Martinez"	, '737373');
                         
 select * from Ayudantes;
 
